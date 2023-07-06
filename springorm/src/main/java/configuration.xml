@@ -42,4 +42,7 @@
 	<bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="hibernateTemplate">
 		<property name="sessionFactory" ref="session" />
 	</bean>
+	
+    <!--CustomerDAO Bean-->
+	<bean class="org.pritam.springorm.DAO.CustomerDAOImplementation" id="customerDAO" autowire="byName"/>
 </beans>
