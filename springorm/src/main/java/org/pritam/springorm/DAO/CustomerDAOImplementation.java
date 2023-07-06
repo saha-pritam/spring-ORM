@@ -1,5 +1,7 @@
 package org.pritam.springorm.DAO;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.pritam.springorm.entity.Customer;
@@ -23,4 +25,10 @@ public class CustomerDAOImplementation implements CustomerDAO {
 		Customer c = hibernateTemplate.get(Customer.class, customerId);
 		return c;
 	}
+	
+    public List<Customer> getAllCustomer() {
+		List<Customer> customers = hibernateTemplate.loadAll(Customer.class);
+		return customers;
+	}
+
 }

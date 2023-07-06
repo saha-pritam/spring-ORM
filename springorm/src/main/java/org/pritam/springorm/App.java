@@ -1,5 +1,7 @@
 package org.pritam.springorm;
 
+import java.util.List;
+
 import org.pritam.springorm.DAO.CustomerDAO;
 import org.pritam.springorm.entity.Customer;
 import org.springframework.context.ApplicationContext;
@@ -39,6 +41,11 @@ public class App
         System.out.println(customer);
         customer = customerDAO.getCustomerById(600);
         System.out.println(customer);
+        
+        //Topic 8
+        List<Customer> customers = customerDAO.getAllCustomer();
+        for(Customer c:customers)
+        	System.out.println(c);
         
         ((ConfigurableApplicationContext)context).close();  
     }
