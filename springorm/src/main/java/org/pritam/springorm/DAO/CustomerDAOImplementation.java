@@ -36,4 +36,13 @@ public class CustomerDAOImplementation implements CustomerDAO {
     	hibernateTemplate.update(customer);
     	System.out.println("Row Updated...");
     }
+    
+    @Transactional
+    public void delete(int customerId) {
+    	Customer c = getCustomerById(customerId);
+    	if(c==null)
+    		return;
+    	hibernateTemplate.delete(c);
+    	System.out.println("Row Deleted...");
+    }
 }

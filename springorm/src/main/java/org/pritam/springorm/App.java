@@ -51,6 +51,10 @@ public class App
         customer =  new Customer(6,"Pritam Saha","Hanna Moos","Forsterstr. 57","Mannheim","68306","Germany");
         customerDAO.update(customer);
         
+        //Topic 10
+        customerDAO.delete(1);
+        customerDAO.delete(100);
+        
         ((ConfigurableApplicationContext)context).close();  
     }
 }
