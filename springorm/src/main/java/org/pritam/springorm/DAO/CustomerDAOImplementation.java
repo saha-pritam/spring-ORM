@@ -18,4 +18,9 @@ public class CustomerDAOImplementation implements CustomerDAO {
 		System.out.println("Row Inserted...");
 		return result;
 	}
+	
+	public Customer getCustomerById(int customerId) {
+		Customer c = hibernateTemplate.get(Customer.class, customerId);
+		return c;
+	}
 }

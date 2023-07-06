@@ -4,4 +4,6 @@ import org.pritam.springorm.entity.Customer;
 
 public interface CustomerDAO {
 	public int insert(Customer customer);
+	
+	public Customer getCustomerById(int customerId);
 }

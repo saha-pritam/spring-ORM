@@ -34,8 +34,12 @@ public class App
         customerDAO.insert(customer6);
         customerDAO.insert(customer7);
         
-        ((ConfigurableApplicationContext)context).close();
+        //Topic 7
+        Customer customer = customerDAO.getCustomerById(6);
+        System.out.println(customer);
+        customer = customerDAO.getCustomerById(600);
+        System.out.println(customer);
         
-        
+        ((ConfigurableApplicationContext)context).close();  
     }
 }
