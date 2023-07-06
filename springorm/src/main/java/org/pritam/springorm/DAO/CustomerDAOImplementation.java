@@ -31,4 +31,9 @@ public class CustomerDAOImplementation implements CustomerDAO {
 		return customers;
 	}
 
+    @Transactional
+    public void update(Customer customer) {
+    	hibernateTemplate.update(customer);
+    	System.out.println("Row Updated...");
+    }
 }

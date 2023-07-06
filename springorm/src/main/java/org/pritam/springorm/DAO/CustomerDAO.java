@@ -11,4 +11,5 @@ public interface CustomerDAO {
 	
 	public List<Customer> getAllCustomer();
 
+	public void update(Customer customer);
 }

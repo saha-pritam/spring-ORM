@@ -47,6 +47,10 @@ public class App
         for(Customer c:customers)
         	System.out.println(c);
         
+        //Topic 9
+        customer =  new Customer(6,"Pritam Saha","Hanna Moos","Forsterstr. 57","Mannheim","68306","Germany");
+        customerDAO.update(customer);
+        
         ((ConfigurableApplicationContext)context).close();  
     }
 }
