@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx.xsd">
+	<tx:annotation-driven />
+	<!--  Data Source Bean-->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/springorm" />
+		<property name="username" value="root" />
+		<property name="password" value="9er$Y%F49yD4" />
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+	</bean>
+	
+    <!-- Session Factory Bean-->
+	<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="session">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+    <!-- Transaction Manager Bean-->
+	<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">
+		<property name="sessionFactory" ref="session" />
+	</bean>
+	
+    <!-- Hibernate Template Bean-->
+	<bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="hibernateTemplate">
+		<property name="sessionFactory" ref="session" />
+	</bean>
+</beans>
