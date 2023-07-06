@@ -6,17 +6,14 @@ import org.pritam.springorm.DAO.CustomerDAO;
 import org.pritam.springorm.entity.Customer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
-    	ApplicationContext context = new ClassPathXmlApplicationContext("configuration.xml");
+    	//Topic 11
+    	ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
     	CustomerDAO customerDAO = (CustomerDAO) context.getBean("customerDAO");
     	
     	//Topic 6
