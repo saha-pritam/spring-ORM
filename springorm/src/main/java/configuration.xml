@@ -25,6 +25,12 @@
 				<prop key="hibernate.format_sql">true</prop>
 			</props>
 		</property>
+        <!-- Mapping Entity Classes-->
+		<property name="annotatedClasses">
+			<list>
+				<value>org.pritam.springorm.entity.Customer</value>
+			</list>
+		</property>
 	</bean>
 	
     <!-- Transaction Manager Bean-->
